@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<style> 
+
+html, body {
+	margin: 0;
+	padding: 0;
+} 
+
+
+
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 21px;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.top-bar-object {
+	padding-left: 8px;
+	padding-right: 8px;
+	font-size: .85em;
+	text-align: center;
+	font-style: normal;
+}
+
+.main-part {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 150px;
+	align-items: center;
+}
+
+.main-part-img {
+	width: 300px;
+	
+}
+
+.main-part-search {
+}
+
+.main-part-icon {
+	margin-left: 8px;
+	margin-right: 8px;
+	background-color: #F0EDED;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 25px;
+	padding-left: 25px;
+	font-size: .85em;
+	border-radius: 4px;
+	border: 1.5px solid #F0EDED;
+}
+
+.main-part-icon:hover {
+	background-color: #F0EDED;
+	border: 1.5px solid #D6D6D6;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.footer-object {
+	padding-left: 8px;
+	padding-right: 8px;
+	font-size: 1em;
+	
+}
+
+@media screen and (max-width: 700px){
+  .footer {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  
+}
+
+.search-div {
+	border: 2px solid #F0EDED;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-right: 50px;
+	padding-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 30px;
+	
+}
+
+
+
+
+a {
+    color: #000; /* for browsers that don't support 'inherit' as a color value */
+    color: inherit;
+}
+
+
+
+
+</style>
+
+<body>
+
+	<div class="top-bar" id="top-bar">
+		<div style="display: flex; flex-direction: row;">
+			<div class="top-bar-object"><a href="#projects">About</a></div>
+			<div class="top-bar-object"><a href="#projects">Store</a></div>
+		</div>
+		<div style="display: flex; flex-direction: row;">
+			<div class="top-bar-object"><a href="#projects">Gmail</a></div>
+			<div class="top-bar-object"><a href="#projects">Images</a></div>
+			<div class="top-bar-object"><img src="dots.png" alt="dots" width="25px"></div>
+			<div class="top-bar-object"><img src="google.png" alt="Google" width="50px"></div>
+		</div>
+	</div>
+
+	<div class="main-part" id="main-part">
+		<div><img src="google.png" alt="Google" width="280px"></div>
+		<div class="search-div">
+			<form class="main-part-search" action="/action_page.php" >
+				<input type="text" id="fname" name="fname" style="width: 400px; height: 25px; border: none; border-color: transparent;">
+			</form>
+		</div>
+		<div style="display: flex; flex-direction: row;">
+			<div class="main-part-icon">Google Search</div>
+			<div class="main-part-icon">I'm Feeling Lucky</div>
+		</div>
+	</div>
+	<div style="background-color: #F0EDED; height: 3em; position: absolute; left: 0; bottom: 0; width: 100%">
+		<div class="footer id="footer">
+			<div style="display: flex; flex-direction: row;">
+				<div class="top-bar-object"><a href="#projects">Advertising</a></div>
+				<div class="top-bar-object"><a href="#projects">Business</a></div>
+				<div class="top-bar-object"><a href="#projects">How Search Works</a></div>
+			</div>
+			<div style="display: flex; flex-direction: row;">
+				<div class="top-bar-object"><a href="#projects">Privacy</a></div>
+				<div class="top-bar-object"><a href="#projects">Terms</a></div>
+				<div class="top-bar-object"><a href="#projects">Settings<a></a></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html> 
