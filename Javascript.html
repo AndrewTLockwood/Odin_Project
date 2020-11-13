@@ -6,8 +6,32 @@
 </head>
 <body>
   <script>
-    // Your JavaScript goes here!
-    console.log("Hello, World!")
+
+    function add7 (num){
+        return(num+7);
+    }
+
+    function multiply (num1, num2){
+        return(num1 * num2);
+    }
+
+    function capitalize (string){
+        if (typeof string !== 'string') return ''
+
+        return(string.charAt(0).toUpperCase() + string.slice(1));
+    }
+
+    function lastLetter (string){
+        if (typeof string !== 'string') return ''
+        let s = (string.length) -1
+        return(string.charAt(s));
+    }
+
+    console.log(add7(6))
+    console.log(multiply(5,7))
+    console.log(capitalize("fred"))
+    console.log(lastLetter("Greog"))
+
   </script>
 </body>
 </html>
