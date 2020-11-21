@@ -83,20 +83,21 @@
 
         let f = fahrenheit.toFixed(1);
         let c = celcius.toFixed(1);
-        console.log("That temperature in Fahrenheit is ", f, " in Celcius it is ", c);
+        console.log("That temperature in Fahrenheit is ", f, ". in Celcius it is ", c, ".");
 
         return ""
     }
 
 
 
-/*
+    console.log("Odin Project Javascript 1")
     console.log(add7(6))
     console.log(multiply(5,7))
     console.log(capitalize("fred"))
     console.log(lastLetter("Greog"))
-*/
 
+    console.log("")
+    console.log("Odin Project Javascript 2")
     console.log(helloWorld());
     console.log(repeatString("hey", 5));
     console.log(reverseString("AndrewLockwood"));
