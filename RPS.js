@@ -1,92 +1,94 @@
-
-// Get user input by button press
-// Show user input on screen
-// get random computer input  ----done
-// show computer input on screen
-// get winner
-// show winner
-// get number of loops from button press
-// loop for number of times  ----done
-
-// Rock = 0, Paper = 1; Scissors = 2
-
-class RPS {
-  constructor(gts){
-    this.gamesToPlay = gts;
+function numToMove(num){
+  if (num === 0){
+    num = "Rock";
   }
 
-set numGames(num){
-    this.gamesToPlay = num;
-}
-
-  get numGames() {
-    return this.gamesToPlay;
+  else if (num === 1){
+    num = "Paper";
   }
 
-
-
+  else if (num === 2){
+    num = "Scissors";
+  }
+  return num;
 }
 
-// Needs Button from user
-function numberOfGames (){
-  return 3;
-}
+function cpuRand(){
+    return Math.floor(Math.random() * 2);
+  }
 
-function getRndInteger() {
-  return Math.floor(Math.random() * 2);
-}
-
-// needs button from user
-function getPlayerInteger() {
-  return 1;
-}
-
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection){
-      return 1;
+function playRound (playerSelection, computerSelection){
+  if (playerSelection === computerSelection){
+    return "Tied";
     }
 
-    else if (playerSelection === 0 && pcomputerSelection === 1){
-      return 0;
+  else if (playerSelection === "Paper" && computerSelection === "Rock"){
+    return "Win"
     }
 
-    else if (playerSelection === computerSelection){
-      return 0;
+  else if (playerSelection === "Paper" && computerSelection === "Scissors"){
+    return "Lose"
     }
 
-    else if (playerSelection === computerSelection){
-      return 0;
+  else if (playerSelection === "Rock" && computerSelection === "Paper"){
+    return "Lose"
     }
-}
 
-function rpsGame() {
+  else if (playerSelection === "Rock" && computerSelection === "Scissors"){
+    return "Win"
+    }
 
+  else if (playerSelection === "Scissors" && computerSelection === "Paper"){
+    return "Win"
+    }
+
+  else if (playerSelection === "Scissors" && computerSelection === "Rock"){
+    return "Lose"
+    }
+
+  }
+
+function rpsGame(){
+
+  let numRounds = prompt("Number of Rounds?");
+
+  let scorePlayer = 0;
+  let scoreCPU = 0;
+
+  for (round = 0; round < numRounds; round++) {
+  console.log("Round ", round+1, " of", numRounds)
+  let cpuMove = cpuRand();
+  cpuMove = numToMove(cpuMove)
+
+  let playerMove = prompt("Choose Rock, Paper or Scissors");
+  playerMove = numToMove(playerMove)
+  console.log("Your Chose ", playerMove);
+  console.log("Robot Chose ", cpuMove);
+
+  let winner = playRound(playerMove, cpuMove);
+  console.log("You ", winner);
+
+  if (winner === "Win"){
+    scorePlayer++;
+  }
+  else if (winner === "Lose"){
+    scoreCPU++;
+  }
   
-let rpsGame = new RPS(numberOfGames())
+  if(winner === "Tied"){
+    round--;
+    }
 
-let i = 1;
-
-while (i < rpsGame.numGames()){
-
-let rand = getRndInteger();
-let plyr = getPlayerInteger();
-
-let winner = playRound(plyr, rand);
-
-  if(winner === 0){
-    return "Tie";
+  console.log("The Score is ", scorePlayer, scoreCPU);
+  
+  }
+  if (scorePlayer < scoreCPU){
+    return "You Lose!";
   }
 
-  else if (winner === 1){
-    return "You Lost";
-    rpsGame.numGames(i);
+  else if (scorePlayer > scoreCPU){
+    return "You Win!";
   }
-
-  else if (winner === 2){
-    return "You Win";
-    game.numGames(i);
-  }
-  i++;
-}
 }
 
+console.log(rpsGame());
