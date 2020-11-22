@@ -221,21 +221,20 @@
     		}
 
 		}
-		
+		/*
 		function rpsGame(numRounds){
 
   			let scorePlayer = 0;
   			let scoreCPU = 0;
-			console.log("hi");
   			for (round = 0; round < numRounds; round++) {
   				console.log("Round ", round+1, " of", numRounds)
   				let cpuMove = cpuRand();
   				cpuMove = numToMove(cpuMove)
-				let playerMove = "";
 				  //let playerMove = prompt("Choose Rock, Paper or Scissors");
 				const btn1 = document.querySelector("#btn1");
 				btn1.addEventListener('click', function(e) {
-					playerMove = "Rock";
+					let playerMove = "Rock";
+					return playerMove;
 				});
   			//	playerMove = numToMove(playerMove)
   				console.log("Your Chose ", playerMove);
@@ -266,25 +265,111 @@
  			else if (scorePlayer > scoreCPU){
 				return "You Win!";	
 			}
-		}
+		}*/
 
 		let numRounds = 0;
-
+		/*
 		const btn = document.querySelector("#best3");
 		btn.addEventListener('click', function(e) {
 			numRounds = 3;
-			console.log(numRounds);
-			rpsGame(numRounds);
+			return numRounds;
 			});
 
 		const btn2 = document.querySelector('#best5');
 		btn2.addEventListener('click', function(e) {
 			numRounds = 5;
-			console.log(numRounds);
-			rpsGame(numRounds);
+			return numRounds;
 			});
 
+			console.log(numRounds);
+			*/
+		const btn1 = document.querySelector("#btn1");
+		btn1.addEventListener('click', function(e) {
 
+			let scorePlayer = 0;
+			  let scoreCPU = 0;
+			  let round = 0;
+
+			playerMove = "Rock";
+			let cpuMove = cpuRand();
+  			cpuMove = numToMove(cpuMove)
+			console.log("Your Chose ", playerMove);
+			  console.log("Robot Chose ", cpuMove);
+			  
+			  let winner = playRound(playerMove, cpuMove);
+
+			  console.log("You ", winner);
+
+  				if (winner === "Win"){
+    				scorePlayer++;
+  				}
+  				else if (winner === "Lose"){
+    				scoreCPU++;
+  				}
+  
+  				if(winner === "Tied"){
+    				round--;
+    			}
+			});
+
+			const btn2 = document.querySelector("#btn2");
+		btn2.addEventListener('click', function(e) {
+
+			let scorePlayer = 0;
+			  let scoreCPU = 0;
+			  let round = 0;
+
+			playerMove = "Paper";
+			let cpuMove = cpuRand();
+  			cpuMove = numToMove(cpuMove)
+			console.log("Your Chose ", playerMove);
+			  console.log("Robot Chose ", cpuMove);
+			  
+			  let winner = playRound(playerMove, cpuMove);
+
+			  console.log("You ", winner);
+
+  				if (winner === "Win"){
+    				scorePlayer++;
+  				}
+  				else if (winner === "Lose"){
+    				scoreCPU++;
+  				}
+  
+  				if(winner === "Tied"){
+    				round--;
+    			}
+			});
+
+			const btn3 = document.querySelector("#btn3");
+		btn3.addEventListener('click', function(e) {
+
+			let scorePlayer = 0;
+			  let scoreCPU = 0;
+			  let round = 0;
+
+			playerMove = "Scissors";
+			let cpuMove = cpuRand();
+  			cpuMove = numToMove(cpuMove)
+			console.log("Your Chose ", playerMove);
+			  console.log("Robot Chose ", cpuMove);
+			  
+			  let winner = playRound(playerMove, cpuMove);
+
+			  console.log("You ", winner);
+
+  				if (winner === "Win"){
+    				scorePlayer++;
+  				}
+  				else if (winner === "Lose"){
+    				scoreCPU++;
+  				}
+  
+  				if(winner === "Tied"){
+    				round--;
+    			}
+			});
+		
 
 	</script>
 
