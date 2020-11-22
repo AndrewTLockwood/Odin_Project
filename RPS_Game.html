@@ -89,8 +89,8 @@
 	<div class="header">
 		<h1>Rock Paper Scissors</h1>
 		
-		<p style="text-align: center; font-size: 20;">Best of 3</p>
-		<p style="text-align: center; font-size: 20;">Best of 5</p>
+		<button id="best3" style="text-align: center; font-size: 20;">Best of 3</button>
+		<button id="best5" style="text-align: center; font-size: 20;">Best of 5</button>
 
 
 	</div>
@@ -105,17 +105,17 @@
 			</div>
 			
 			<div class="choices">
-				<div class="choice-item">
+				<button id="btn1" class="choice-item">
 					Rock
-				</div>
+				</button>
 				
-				<div class="choice-item">
+				<button id="btn2" class="choice-item">
 					Paper
-				</div>
+				</button>
 				
-				<div class="choice-item">
+				<button id="btn3" class="choice-item">
 					Scissors
-				</div>
+				</button>
 			</div>
 			
 			<div class="choice">
@@ -158,101 +158,134 @@
 	
 	<script>
 
+	//	const buttons = document.querySelectorAll("button");
+
+	//	buttons.forEach((button) => {
+	//		button.addEventListener("click", () => {
+	//			alert(button.id);
+	//		});
+
+	//	});
+		//const btn = document.querySelector('#btn1');
+		//btn.addEventListener('click', function (e) {
+		//e.target.style.background = 'blue';
+  		//console.log(e.target);
+//});
+		
 		function numToMove(num){
-			if (num === 0){
-				num = "Rock";
-			}
+  			if (num === 0){
+    			num = "Rock";
+  			}
 
-			else if (num === 1){
-				num = "Paper";
-			}
+  			else if (num === 1){
+    			num = "Paper";
+ 			}
 
-			else if (num === 2){
-				num = "Scissors";
-			}
-			return num;
+  			else if (num === 2){
+    			num = "Scissors";
+  			}
+  			return num;
 		}
 
 		function cpuRand(){
-			  return Math.floor(Math.random() * 2);
-			}
-	
+    		return Math.floor(Math.random() * 2);
+ 		}
+
 		function playRound (playerSelection, computerSelection){
-			if (playerSelection === computerSelection){
-				return "Tied";
-				}
+  			if (playerSelection === computerSelection){
+    			return "Tied";
+    		}
 
-			else if (playerSelection === "Paper" && computerSelection === "Rock"){
-				return "Win"
-				}
+  			else if (playerSelection === "Paper" && computerSelection === "Rock"){
+    			return "Win"
+    		}
 
-			else if (playerSelection === "Paper" && computerSelection === "Scissors"){
-				return "Lose"
-				}
+  			else if (playerSelection === "Paper" && computerSelection === "Scissors"){
+    			return "Lose"
+    		}
 
-			else if (playerSelection === "Rock" && computerSelection === "Paper"){
-				return "Lose"
-				}
+  			else if (playerSelection === "Rock" && computerSelection === "Paper"){
+    			return "Lose"
+    		}
 
-			else if (playerSelection === "Rock" && computerSelection === "Scissors"){
-				return "Win"
-				}
+  			else if (playerSelection === "Rock" && computerSelection === "Scissors"){
+    			return "Win"
+    		}
 
-			else if (playerSelection === "Scissors" && computerSelection === "Paper"){
-				return "Win"
-				}
+  			else if (playerSelection === "Scissors" && computerSelection === "Paper"){
+    			return "Win"
+    		}
 
-			else if (playerSelection === "Scissors" && computerSelection === "Rock"){
-				return "Lose"
-				}
-	
-			}
-	
-		function rpsGame(){
+  			else if (playerSelection === "Scissors" && computerSelection === "Rock"){
+    			return "Lose"
+    		}
 
-			let numRounds = prompt("Number of Rounds?");
+		}
+		
+		function rpsGame(numRounds){
 
-			let scorePlayer = 0;
-			let scoreCPU = 0;
+  			let scorePlayer = 0;
+  			let scoreCPU = 0;
+			console.log("hi");
+  			for (round = 0; round < numRounds; round++) {
+  				console.log("Round ", round+1, " of", numRounds)
+  				let cpuMove = cpuRand();
+  				cpuMove = numToMove(cpuMove)
+				let playerMove = "";
+				  //let playerMove = prompt("Choose Rock, Paper or Scissors");
+				const btn1 = document.querySelector("#btn1");
+				btn1.addEventListener('click', function(e) {
+					playerMove = "Rock";
+				});
+  			//	playerMove = numToMove(playerMove)
+  				console.log("Your Chose ", playerMove);
+  				console.log("Robot Chose ", cpuMove);
 
-			for (round = 0; round < numRounds; round++) {
-			console.log("Round ", round+1, " of", numRounds)
-			let cpuMove = cpuRand();
-			cpuMove = numToMove(cpuMove)
+  				let winner = playRound(playerMove, cpuMove);
+  				console.log("You ", winner);
 
-			let playerMove = prompt("Choose Rock, Paper or Scissors");
-			playerMove = numToMove(playerMove)
-			console.log("Your Chose ", playerMove);
-			console.log("Robot Chose ", cpuMove);
+  				if (winner === "Win"){
+    				scorePlayer++;
+  				}
+  				else if (winner === "Lose"){
+    				scoreCPU++;
+  				}
+  
+  				if(winner === "Tied"){
+    				round--;
+    			}
 
-			let winner = playRound(playerMove, cpuMove);
-			console.log("You ", winner);
-
-			if (winner === "Win"){
-				scorePlayer++;
-			}
-			else if (winner === "Lose"){
-				scoreCPU++;
-			}
-			
-			if(winner === "Tied"){
-				round--;
-				}
-
-			console.log("The Score is ", scorePlayer, scoreCPU);
-			
-			}
-			if (scorePlayer < scoreCPU){
+  				console.log("The Score is ", scorePlayer, scoreCPU);
+  
+			  }
+			  
+  			if (scorePlayer < scoreCPU){
 				return "You Lose!";
-			}
+			  }
 
-			else if (scorePlayer > scoreCPU){
-				return "You Win!";
+ 			else if (scorePlayer > scoreCPU){
+				return "You Win!";	
 			}
 		}
-	
-		console.log(rpsGame());
-	
+
+		let numRounds = 0;
+
+		const btn = document.querySelector("#best3");
+		btn.addEventListener('click', function(e) {
+			numRounds = 3;
+			console.log(numRounds);
+			rpsGame(numRounds);
+			});
+
+		const btn2 = document.querySelector('#best5');
+		btn2.addEventListener('click', function(e) {
+			numRounds = 5;
+			console.log(numRounds);
+			rpsGame(numRounds);
+			});
+
+
+
 	</script>
 
 

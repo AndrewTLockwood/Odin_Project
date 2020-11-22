@@ -49,9 +49,8 @@
                 x.splice(i-1,1);
             }
         }
-        console.log(x);
 
-        return "";
+        return x;
     }
 
     const sumAll = function(num1, num2) {
@@ -101,8 +100,8 @@
     console.log(helloWorld());
     console.log(repeatString("hey", 5));
     console.log(reverseString("AndrewLockwood"));
-  //  console.log(removeFromArray([1,2,3,45,4,4,4,5,6], 5));
+    //console.log(removeFromArray([1,2,3,45,4,4,4,5,6], 5));
     console.log(sumAll(1,4));
-    console.log(leapYears(1985));
+    console.log(leapYears(2020));
     console.log(tempConversion(0));
 
