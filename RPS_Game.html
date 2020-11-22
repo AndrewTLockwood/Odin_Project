@@ -191,6 +191,10 @@
     		return Math.floor(Math.random() * 2);
  		}
 
+		let displayScore = function(counter, cpuScore, playerScore){
+			console.log(" Player Score ", playerScore, "Robot Score ", cpuScore);
+		}
+
 		function playRound (playerSelection, computerSelection){
   			if (playerSelection === computerSelection){
     			return "Tied";
@@ -221,156 +225,86 @@
     		}
 
 		}
-		/*
-		function rpsGame(numRounds){
+		
+		function rpsGame(playerMove){
 
-  			let scorePlayer = 0;
-  			let scoreCPU = 0;
-  			for (round = 0; round < numRounds; round++) {
-  				console.log("Round ", round+1, " of", numRounds)
   				let cpuMove = cpuRand();
   				cpuMove = numToMove(cpuMove)
-				  //let playerMove = prompt("Choose Rock, Paper or Scissors");
-				const btn1 = document.querySelector("#btn1");
-				btn1.addEventListener('click', function(e) {
-					let playerMove = "Rock";
-					return playerMove;
-				});
-  			//	playerMove = numToMove(playerMove)
   				console.log("Your Chose ", playerMove);
   				console.log("Robot Chose ", cpuMove);
-
   				let winner = playRound(playerMove, cpuMove);
   				console.log("You ", winner);
 
+				  console.log("End of Round ", counter);
   				if (winner === "Win"){
-    				scorePlayer++;
+    				playerScore++;
+					counter++;
   				}
   				else if (winner === "Lose"){
-    				scoreCPU++;
+    				cpuScore++;
+					counter++;
   				}
   
   				if(winner === "Tied"){
-    				round--;
-    			}
+				  }
 
-  				console.log("The Score is ", scorePlayer, scoreCPU);
   
-			  }
-			  
-  			if (scorePlayer < scoreCPU){
-				return "You Lose!";
-			  }
-
- 			else if (scorePlayer > scoreCPU){
-				return "You Win!";	
-			}
-		}*/
-
-		let numRounds = 0;
-		/*
-		const btn = document.querySelector("#best3");
-		btn.addEventListener('click', function(e) {
-			numRounds = 3;
-			return numRounds;
-			});
-
-		const btn2 = document.querySelector('#best5');
-		btn2.addEventListener('click', function(e) {
-			numRounds = 5;
-			return numRounds;
-			});
-
-			console.log(numRounds);
-			*/
-		const btn1 = document.querySelector("#btn1");
-		btn1.addEventListener('click', function(e) {
-
-			let scorePlayer = 0;
-			  let scoreCPU = 0;
-			  let round = 0;
-
-			playerMove = "Rock";
-			let cpuMove = cpuRand();
-  			cpuMove = numToMove(cpuMove)
-			console.log("Your Chose ", playerMove);
-			  console.log("Robot Chose ", cpuMove);
-			  
-			  let winner = playRound(playerMove, cpuMove);
-
-			  console.log("You ", winner);
-
-  				if (winner === "Win"){
-    				scorePlayer++;
-  				}
-  				else if (winner === "Lose"){
-    				scoreCPU++;
-  				}
-  
-  				if(winner === "Tied"){
-    				round--;
-    			}
-			});
-
-			const btn2 = document.querySelector("#btn2");
-		btn2.addEventListener('click', function(e) {
-
-			let scorePlayer = 0;
-			  let scoreCPU = 0;
-			  let round = 0;
-
-			playerMove = "Paper";
-			let cpuMove = cpuRand();
-  			cpuMove = numToMove(cpuMove)
-			console.log("Your Chose ", playerMove);
-			  console.log("Robot Chose ", cpuMove);
-			  
-			  let winner = playRound(playerMove, cpuMove);
-
-			  console.log("You ", winner);
-
-  				if (winner === "Win"){
-    				scorePlayer++;
-  				}
-  				else if (winner === "Lose"){
-    				scoreCPU++;
-  				}
-  
-  				if(winner === "Tied"){
-    				round--;
-    			}
-			});
-
-			const btn3 = document.querySelector("#btn3");
-		btn3.addEventListener('click', function(e) {
-
-			let scorePlayer = 0;
-			  let scoreCPU = 0;
-			  let round = 0;
-
-			playerMove = "Scissors";
-			let cpuMove = cpuRand();
-  			cpuMove = numToMove(cpuMove)
-			console.log("Your Chose ", playerMove);
-			  console.log("Robot Chose ", cpuMove);
-			  
-			  let winner = playRound(playerMove, cpuMove);
-
-			  console.log("You ", winner);
-
-  				if (winner === "Win"){
-    				scorePlayer++;
-  				}
-  				else if (winner === "Lose"){
-    				scoreCPU++;
-  				}
-  
-  				if(winner === "Tied"){
-    				round--;
-    			}
-			});
+			  }	  
 		
+		let resetScore = function(counter){
+			if (counter > 5){
+				return true;
+			}
+		}
+		let counter = 1;
+		let playerScore = 0;
+		let cpuScore = 0;
 
+
+		const btn1 = document.querySelector("#btn1");
+		btn1.addEventListener('click', () => {
+			console.log("Round", counter)
+			playerMove = "Rock";
+			rpsGame(playerMove);
+			displayScore(counter, cpuScore, playerScore);
+			end = resetScore(counter);
+			if (end == true){
+				counter = 1;
+				playerScore = 0;
+				cpuScore = 0;
+			}
+		});
+
+		const btn2 = document.querySelector("#btn2");
+		btn2.addEventListener('click', () => {
+			console.log("Round", counter)
+			playerMove = "Paper";
+			rpsGame(playerMove);
+			displayScore(counter, cpuScore, playerScore);
+			end = resetScore(counter);
+			if (end == true){
+				counter = 1;
+				playerScore = 0;
+				cpuScore = 0;
+			}
+		});
+
+		const btn3 = document.querySelector("#btn3");
+		btn3.addEventListener('click', () => {
+			console.log("Round", counter)
+			playerMove = "Scissors";
+			rpsGame(playerMove);
+			displayScore(counter, cpuScore, playerScore);
+			end = resetScore(counter);
+			if (end == true){
+
+				counter = 1;
+				playerScore = 0;
+				cpuScore = 0;
+			}
+		});
+
+		
 	</script>
 
 
