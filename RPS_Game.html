@@ -171,22 +171,22 @@
 	<script>
 		
 		function numToMove(num){
-  			if (num === 0){
+  			if (num < 49){
     			num = "Rock";
   			}
 
-  			else if (num === 1){
+  			else if ((num >= 50) && (num <=100)){
     			num = "Paper";
  			}
 
-  			else if (num === 2){
+  			else if (num > 100){
     			num = "Scissors";
   			}
   			return num;
 		}
 
 		function cpuRand(){
-    		return Math.floor(Math.random() * 2);
+    		return Math.floor(Math.random() * 150);
  		}
 
 		let displayScore = function(counter, cpuScore, playerScore){
