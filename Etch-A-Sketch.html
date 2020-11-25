@@ -1,17 +1,35 @@
 <html>
 <style>
 
-    .box {
-        display: grid; 
-        justify-items: center;  
+    .etchbox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
+    .box {
+        width: 616px;
+        height: 400px;
+        display: inline-grid; 
+        justify-items: center;  
+        border: solid ;
+        border-width: 6px 100px 0;
+    }
+
+    .small {
+        grid-template-columns: repeat(22, auto);
+    }
+
 
 </style>
 
 <body>
-
-    <div class="box" id="gameBox">
+    <div><h1>Etch a Sketch</h1></div>
+    <div class="etchBox">
+        <div class="box" id="gameBox">
+        </div>
     </div>
+
 
     <script src="Etch-A-Sketch.js"></script>
 </body>
