@@ -4,7 +4,7 @@ const grid = document.querySelector("#gameBox");
 
 
 
-let boxStyle = ' height: 25px; width: 28px; background-color: pink;'
+let boxStyle = ' height: 25px; width: 28px; background-color: #bfbfbf;'
 
 
 let generateGrid = function(size = 352) {
@@ -28,7 +28,7 @@ let paintIt = function(){
   [].forEach.call(gridItems, function(item){
    // console.log(item);
     item.addEventListener('mouseenter', (e) => {
-      e.target.style.backgroundColor = '#707070';
+      e.target.style.backgroundColor = '#404040';
     });
   });
 

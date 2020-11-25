@@ -1,32 +1,68 @@
 <html>
 <style>
 
+    .body {
+        display: flex; 
+        justify-content: center; 
+        flex-direction: row; 
+        align-items: center; 
+        background-color:  #e6e6e6;
+    }
+
     .etchbox {
         display: flex;
         flex-direction: column;
+        width: 800px;
+        height: 650px;
+        background-color: #ff1a1a; 
         align-items: center;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .box {
         width: 616px;
         height: 400px;
         display: inline-grid; 
-        justify-items: center;  
-        border: solid ;
-        border-width: 6px 100px 0;
     }
 
     .small {
         grid-template-columns: repeat(22, auto);
     }
 
+    .medium {
+        grid-template-columns: repeat(44, auto);
+    }
+
+    .large {
+        grid-template-columns: repeat(88, auto);
+    }
+
+    .dial {
+        background-color: 	#ffffff;
+        width: 87px;
+        height: 87px;
+        border-radius: 45px;
+        margin-top: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 
 </style>
 
-<body>
-    <div><h1>Etch a Sketch</h1></div>
+<body class= "body">
     <div class="etchBox">
+        <div>
+            <h1>Etch a Sketch</h1>
+        </div>
+
         <div class="box" id="gameBox">
+        </div>
+
+        <div style="display: flex; flex-direction: row; ">
+            <div style="margin-right: 200px;"class="dial" id="size">Small
+            </div>
+            <div style="margin-left: 200px;"class="dial" id="color">Regular
+            </div>
         </div>
     </div>
 
