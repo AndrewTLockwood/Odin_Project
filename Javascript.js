@@ -53,6 +53,8 @@
         return x;
     }
 
+
+
     const sumAll = function(num1, num2) {
         let large
         let small
@@ -89,6 +91,54 @@
 
 
 
+
+
+    function add (num1, num2) {
+        let addObj = {
+            1: num1, 
+            2: num2,
+        };
+       // let addition = add
+     //   console.log(addObj[1]);
+
+        return addObj[1] + addObj[2];
+    }
+    
+    function subtract (num1, num2) {
+        let addObj = {
+            1: num1, 
+            2: num2,
+        };
+        return addObj[1] - addObj[2];
+    }
+    
+    function sum () {w
+        
+    }
+    
+    function multiply () {
+        
+    }
+    
+    function power() {
+        
+    }
+    
+    function factorial(num) {
+        if (num == 0 || num==1){
+            return 1;
+        }
+        let facAns = 1;
+        for (i=2; i<num+1; i++){
+          facAns = facAns * i
+        //    console.log(facAns);
+        }
+        console.log("The Factorial of ", num, " is ", facAns);
+        return "";
+    }
+
+
+    
     console.log("Odin Project Javascript 1")
     console.log(add7(6))
     console.log(multiply(5,7))
@@ -104,4 +154,10 @@
     console.log(sumAll(1,4));
     console.log(leapYears(2020));
     console.log(tempConversion(0));
+    
+    console.log("");
+    console.log("Odin Project Javascript 3");
+    console.log(add(0,0));
+    console.log(subtract(0,5));
+    console.log(factorial(8));
 
