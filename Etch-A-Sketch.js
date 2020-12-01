@@ -1,7 +1,27 @@
 
 
 const grid = document.querySelector("#gameBox");
+const gameBox = document.getElementById('gameBox');
+//const gridItems = document.querySelectorAll('#pixelBox');
 
+let removeBox = function() {
+  while (gameBox.firstChild) {
+    gameBox.removeChild(gameBox.firstChild);
+  }
+}
+
+let paintIt = function(){
+  const gridItems = document.querySelectorAll('#pixelBox');
+  console.log(gridItems);
+  [].forEach.call(gridItems, function(item){
+   // console.log(item);
+    item.addEventListener('mouseenter', (e) => {
+      e.target.style.backgroundColor = '#404040';
+      //console.log(e);
+    });
+  });
+
+}
 
 
 
@@ -15,13 +35,15 @@ let largeBox = 5632;
 
 let currentSize = "m";
 
-let generateGrid = function(size = 1408, sbox = 'medium', styleB = boxStyleMedium) {
-  const gameBox = document.getElementById('gameBox');
+let generateGrid = function(size, sbox, styleB) {
+
+  removeBox();
 
   console.log(gameBox);
   gameBox.classList.remove("medium");
   gameBox.classList.remove("small");
   gameBox.classList.remove("large");
+
 
   gameBox.classList.add(sbox);
 
@@ -35,42 +57,45 @@ let generateGrid = function(size = 1408, sbox = 'medium', styleB = boxStyleMediu
   }
 }
 
-let paintIt = function(){
-  const gridItems = document.querySelectorAll('#pixelBox');
-  [].forEach.call(gridItems, function(item){
-   // console.log(item);
-    item.addEventListener('mouseenter', (e) => {
-      e.target.style.backgroundColor = '#404040';
-    });
-  });
-
-}
-
 let reSize = function (){
   const sizeButton = document.querySelector('#size');
   sizeButton.addEventListener("click", e => {
     if (currentSize == "m"){
       currentSize = "l";
+      document.getElementById("size").innerHTML = "Large";
       generateGrid(largeBox, "large", boxStyleLarge);
-
+      paintIt();
     }
     else if (currentSize == "l"){
       currentSize = "s";
+      document.getElementById("size").innerHTML = "Small";
       generateGrid(smallBox, "small", boxStyleSmall);
+      paintIt();
     }
     else if (currentSize == "s"){
       currentSize = "m";
+      document.getElementById("size").innerHTML = "Medium";
       generateGrid(mediumBox, "medium", boxStyleMedium);
+      paintIt();
     }
   });
 
+}
+
+  let reset = function (){
+    const resetButton = document.querySelector('#reset');
+    resetButton.addEventListener("click", e => {
+    generateGrid(mediumBox, "medium" , boxStyleMedium);
+    paintIt();
+  });
 
 }
 
 
-generateGrid();
+generateGrid(mediumBox, "medium" , boxStyleMedium);
 paintIt();
 reSize();
+reset();
 
 
 
