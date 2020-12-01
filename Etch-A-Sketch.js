@@ -22,6 +22,7 @@ let generateGrid = function(size = 1408, sbox = 'medium', styleB = boxStyleMediu
   gameBox.classList.remove("medium");
   gameBox.classList.remove("small");
   gameBox.classList.remove("large");
+
   gameBox.classList.add(sbox);
 
   for (i = 0; i < size; i++){
