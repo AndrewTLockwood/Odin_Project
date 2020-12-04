@@ -112,16 +112,21 @@
         return addObj[1] - addObj[2];
     }
     
-    function sum () {w
-        
+    function sum () {
+        // need to do
     }
     
     function multiply () {
-        
+        // need to do
     }
     
-    function power() {
-        
+    function power(num1, num2) {
+        let base = 1;
+        for (i =0; i<num2; i++){
+          base = base * num1;
+         //   console.log(base);
+        }
+        return base;
     }
     
     function factorial(num) {
@@ -136,6 +141,20 @@
         console.log("The Factorial of ", num, " is ", facAns);
         return "";
     }
+
+    const palindromes = function(phrase) {
+        // need to convert to an array, run through array to match each letter
+    }
+
+    const caesar = function(phrase, numShift) {
+        // create array
+        let chars = phrase.charCodeAt(0) + numShift;
+        console.log("Value: ", chars);
+        // Add array value to new string
+        
+        return " ";
+    }
+ 
 
 
     
@@ -160,4 +179,7 @@
     console.log(add(0,0));
     console.log(subtract(0,5));
     console.log(factorial(8));
+    console.log(power(4,3));
+
+    console.log(caesar("Catbath", 4));
 
