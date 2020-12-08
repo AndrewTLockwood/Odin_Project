@@ -30,6 +30,14 @@
     background-color: blue;
 }
 
+.function {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(67, 67, 121);
+}
+
+
+
 
 </style>
 <body style="display: flex; flex-direction: column; align-items: center; height: 100vh; background-color: grey;">
@@ -37,17 +45,19 @@
     <h1 style="text-align: center;">Calculator</h1>
     <div class="calcBox">
         <div class ="display">
-            <div id="twoNumber">
-                <p>12</p>
-            </div id="numbers">
             <div>
-                <p>12</p>
+                <p id="twoNumber" style="text-align: right; margin-right: 10px;">0</p>
+            </div>
+            <div>
+                <p id="numbers" style="text-align: right; margin-right: 10px;"">0</p>
             </div>
 
         </div>
         <div class="buttonBox">
-            <div class="digiKey" id="digitbutton"></div>
-            <div id="addButton"></div>
+            <div class="digiKey" id="digitButton" key="7">7</div>
+            <div class="function" id="addButton">+</div>
+            <div class="function" id="equalButton">=</div>
+            <div class="function" id="resetButton">c</div>
         </div>
     </div>
 
