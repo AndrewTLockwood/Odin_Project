@@ -8,56 +8,97 @@
     justify-content: center;
     height: 600px;
     width: 400px;
-    background-color: blue;
+    background-color: rgb(85, 87, 94);
 }
 
 .display {
     height: 150px;
     width: 375px;
-    background-color: rgb(114, 75, 75);
+    background-color: rgb(141, 141, 141);
     margin-bottom: 20px;
 }
 
 .buttonBox {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     height: 350px;
     width: 375px;
     background-color: white;
 }
 
 .digiKey {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+    width: 91px;
+    height: 67px;
+    background-color: rgb(220, 220, 228);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    text-align: center;
 }
 
 .function {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(67, 67, 121);
+    width: 91px;
+    height: 67px;
+    background-color:rgb(199, 193, 193);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    text-align: center;
 }
+
+.special {
+    width: 91px;
+    height: 67px;
+    background-color: rgb(199, 193, 193);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    text-align: center;
+}
+
 
 
 
 
 </style>
-<body style="display: flex; flex-direction: column; align-items: center; height: 100vh; background-color: grey;">
+<body style="display: flex; flex-direction: column; align-items: center; height: 100vh; background-color: rgb(103, 108, 134);">
 
-    <h1 style="text-align: center;">Calculator</h1>
+    <h1 style="text-align: center; margin-top: 50px;">Calculator</h1>
     <div class="calcBox">
         <div class ="display">
             <div>
-                <p id="twoNumber" style="text-align: right; margin-right: 10px;">0</p>
+                <p id="twoNumber" style="text-align: right; margin-right: 10px; margin-top: 30px;">0</p>
             </div>
             <div>
-                <p id="numbers" style="text-align: right; margin-right: 10px;"">0</p>
+                <p id="numbers" style="text-align: right; margin-right: 10px; margin-top: 30px;">0</p>
             </div>
 
         </div>
         <div class="buttonBox">
-            <div class="digiKey" id="digitButton" key="7">7</div>
-            <div class="function" id="addButton">+</div>
-            <div class="function" id="equalButton">=</div>
-            <div class="function" id="resetButton">c</div>
+            <div class="special" id="reset">C</div>
+            <div class="function"></div>
+            <div class="function"></div>
+            <div class="function" id="">%</div>
+
+            <div class="digiKey" name="7">7</div>
+            <div class="digiKey" name="8">8</div>
+            <div class="digiKey" name="9">9</div>
+            <div class="function" name="*">*</div>
+
+            <div class="digiKey" name="4">4</div>
+            <div class="digiKey" name="5">5</div>
+            <div class="digiKey" name="6">6</div>
+            <div class="function" name="-">-</div>
+
+            <div class="digiKey" name="1">1</div>
+            <div class="digiKey" name="2">2</div>
+            <div class="digiKey" name="3">3</div>
+            <div class="function" name="+">+</div>
+
+            <div class="digiKey"></div>
+            <div class="digiKey" name="0">0</div>
+            <div class="digiKey" name=".">.</div>
+            <div class="special" id="equal">=</div>
         </div>
     </div>
 

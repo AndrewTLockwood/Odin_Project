@@ -1,6 +1,6 @@
 console.log("Calculator");
 
-let previousNum = "";
+let resultNum = "";
 let currentNum = "";
 
 let firstNum = 0;
@@ -19,34 +19,39 @@ let Calculate = function (currentNum, previousNum){
 }
 
 const digitListen = function (){
-  const digitButton = document.querySelector('#digitButton');
-  digitButton.addEventListener("click", e => {
-      console.log(e);
-      currentNum = currentNum + "7";
-      document.getElementById("numbers").innerHTML = currentNum;
-      console.log(currentNum);
+  const digitButton = document.getElementsByClassName("digiKey");
+  for (let i=0; i < digitButton.length; i++){
+    digitButton[i].addEventListener("click", function(index) {
+      let numKey = index.target.getAttribute("name");
+      currentNum = currentNum + numKey;
+      document.getElementById("twoNumber").innerHTML = currentNum;
+   //   currentNum = currentNum + "7";
+  //    document.getElementById("twoNumber").innerHTML = currentNum;
+  //    if (firstNum != 0){
+  //      secondNum = Number()
+  //    }
   });
+}
 }
 
 const funcListen = function(){
-  const addButton = document.querySelector('#addButton'); 
-  addButton.addEventListener("click", e => { 
-    console.log(e);
-    if (result == 0){ 
-      firstNum = result;
-      previousNum = currentNum + "+"; 
-    }
-    else {
-      firstNum = Number(currentNum);
-      previousNum = currentNum + "+"; 
-    }
-    currentNum = ""; 
-    document.getElementById("twoNumber").innerHTML = previousNum;
+
+  const funcButton = document.getElementsByClassName("function");
+  for (let i=0; i < funcButton.length; i++){
+    funcButton[i].addEventListener("click", function(index) {
+      let funcKey = index.target.getAttribute("name");
+      currentNum = currentNum + funcKey;
+      document.getElementById("twoNumber").innerHTML = currentNum;
+
+    });
+  }
+ /* funcButton.addEventListener("click", e => { 
+   console.log(e);
   });
 
   const equalButton = document.querySelector('#equalButton'); 
     equalButton.addEventListener("click", e => { 
-      console.log(e); 
+   //   console.log(e); 
       secondNum = Number(currentNum);
       result = firstNum + secondNum;
       previousNum = previousNum + currentNum;
@@ -59,7 +64,10 @@ const funcListen = function(){
       numData();
     });
 
-    const resetButton = document.querySelector('#resetButton'); 
+  }
+  */
+
+    const resetButton = document.querySelector('#reset'); 
     resetButton.addEventListener("click", e => { 
       console.log(e); 
       currentNum = "";
@@ -72,6 +80,7 @@ const funcListen = function(){
       numData();
     });
 }
+
 
 digitListen();
 funcListen();
