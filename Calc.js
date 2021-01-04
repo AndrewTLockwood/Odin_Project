@@ -9,6 +9,8 @@ let result = 0;
 let mode = "";
 
 let numData = function() {
+  console.log("twonum: ", twoNum);
+  console.log("currentNum: ", currentNum);
   console.log("First: ", firstNum);
   console.log("Second: ", secondNum);
   console.log("Result: ", result);
@@ -24,7 +26,14 @@ const digitListen = function (){
   for (let i=0; i < digitButton.length; i++){
     digitButton[i].addEventListener("click", function(index) {
       let numKey = index.target.getAttribute("name");
-      currentNum = currentNum + numKey;
+      if (result != 0){
+        currentNum = numKey;
+        twoNum = result;
+        result = 0;
+        document.getElementById("twoNumber").innerHTML = twoNum;
+      }
+      else{
+      currentNum = currentNum + numKey;}
       document.getElementById("numbers").innerHTML = currentNum;
   });
 }
