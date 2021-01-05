@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <style>
+    .nav {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        justify-content: space-between;
+    }
+
+    .navItem {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .books {
+        display: grid;
+        width: 80vw;
+        height: 100vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-top: 30px;
+        background-color: blue;
+    }
+
+ </style>
+ <body>
+
+    <nav class="nav">
+        <div>
+            <h1>Library</h1>
+            <p>Created for Odin Project</p>
+        </div>    
+        <div  class="nav">
+            <div class="navItem">Add Book</div>
+            <div class="navItem">Book List</div>
+            <div class="navItem">0 Books</div>
+        </div>
+    </nav>
+    <div style="background-color: grey; width: 100vw;">
+        <books class="books">
+        </books>
+    </div>
+    <script src="library.js"></script>
+ </body>
+</html>
