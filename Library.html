@@ -25,8 +25,41 @@
         background-color: blue;
     }
 
+    .bookList {
+        display: none;
+        
+    }
+
+    .newBook {
+        display:none;
+        position: fixed;
+        z-index: 10;
+        height: 200px;
+        width: 30vw;
+        margin-top: 45vh;
+        margin-left: 35vw;
+        margin-right: 35vw;
+        background-color: gray;
+    }
+
+
  </style>
  <body>
+
+    <div class ="newBook" id="newBook">
+        <form>
+            <label for="author">Author</label>
+            <input type="text" id="author" name="authorName">
+        
+            <label for="title">Title</label>
+            <input type="text" id="title" name="bookTitle">
+        
+            <label for="pages">Pages</label>
+            <input type="text" id="pages" name="bookPages">
+          
+            <input type="submit" value="Submit">
+          </form>
+    </div>
 
     <nav class="nav">
         <div>
@@ -34,15 +67,18 @@
             <p>Created for Odin Project</p>
         </div>    
         <div  class="nav">
-            <div class="navItem">Add Book</div>
-            <div class="navItem">Book List</div>
-            <div class="navItem">0 Books</div>
+            <div class="navItem" id="bookAdd">Add Book</div>
+            <div class="navItem" id="bookList">Book List</div>
+            <div class="navItem" id="bookNum">0 Books</div>
         </div>
     </nav>
+
     <div style="background-color: grey; width: 100vw;">
         <books class="books">
         </books>
     </div>
+
     <script src="library.js"></script>
+
  </body>
 </html>
