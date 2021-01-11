@@ -30,6 +30,7 @@
 
     .books {
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr, 1fr;
         width: 80vw;
         height: 100vh;
         margin-left: 10vw;
@@ -63,6 +64,12 @@
         margin-left: 35vw;
         margin-right: 35vw;
         background-color: rgb(233, 230, 230);
+    }
+
+    .bookRender {
+        height: 100px;
+        width: 100px;
+        background-color: green;
     }
 
 
@@ -102,7 +109,8 @@
     </nav>
 
     <div style="background-color: grey; width: 100vw;">
-        <books class="books">
+        <books class="books" id="books">
+
         </books>
     </div>
 

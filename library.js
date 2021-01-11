@@ -8,6 +8,19 @@
 
 
 
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+}
+
+const newBookBlock = document.getElementById('books');
+
+
+let Books = [];
 
 let bookNumber = 0;
 
@@ -31,7 +44,17 @@ const Use = function(){
     const addButton = document.getElementById("addButton");
         addButton.addEventListener("click", e => {
             console.log(e);
+            const bookBook = new Book("Dor","gar", 7594, "yes");
+            Books.push(bookBook);
+
+            const div = document.createElement('div');
+            div.classList.add("bookRender")
+            newBookBlock.appendChild(div);
+          //  console.log(Books);
             bookNumber++;
+            
+            render();
+
             if (bookNumber == 1){
                 document.getElementById("bookNum").innerHTML = bookNumber + " Book";
             }
@@ -52,5 +75,14 @@ const Use = function(){
     }
 }
 
+const render = function() {
+
+    for(let i = 0; i < Books.length; i++){
+        console.log(Books[i].title, Books[i].author, Books[i].pages, Books[i].read);
+
+    }
+}
+
 
 Use();
+render();
