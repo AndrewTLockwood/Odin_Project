@@ -1,5 +1,5 @@
 // list of books on top
-// create book object
+// create book object -- DONE
 // add books from menu
 // number of books -- DONE
 // zoom book
@@ -44,13 +44,20 @@ const Use = function(){
     const addButton = document.getElementById("addButton");
         addButton.addEventListener("click", e => {
             console.log(e);
-            const bookBook = new Book("Dor","gar", 7594, "yes");
+
+            let author = document.getElementById("author").value;
+            var title = document.getElementById("title").value;
+            var pages = document.getElementById("pages").value;
+
+            const bookBook = new Book(author,title, pages, "yes");
             Books.push(bookBook);
 
             const div = document.createElement('div');
             div.classList.add("bookRender")
             newBookBlock.appendChild(div);
-          //  console.log(Books);
+            div.id = author + title;
+
+            console.log(div.id);
             bookNumber++;
             
             render();

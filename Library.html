@@ -26,11 +26,12 @@
     .navItem {
         margin-left: 20px;
         margin-right: 20px;
+        cursor: pointer;
     }
 
     .books {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr, 1fr;
+        grid-template-columns: auto auto auto auto;
         width: 80vw;
         height: 100vh;
         margin-left: 10vw;
@@ -104,7 +105,7 @@
         <div  class="nav">
             <div class="navItem" id="bookAdd">Add Book</div>
             <div class="navItem" id="bookList">Book List</div>
-            <div class="navItem" id="bookNum">0 Books</div>
+            <div style="margin-left: 20px; margin-right: 20px;" id="bookNum">0 Books</div>
         </div>
     </nav>
 
