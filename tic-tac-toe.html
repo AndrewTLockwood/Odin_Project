@@ -23,6 +23,7 @@
 .gameBox {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 70vw;
     height: 70vh;
@@ -51,7 +52,13 @@
     border-radius: 5px;
 }
 
-
+.scoreBox {
+    width: 500px;
+    height: 50px;
+    background-color:rgb(219, 209, 209);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
 
 
 </style>
@@ -63,6 +70,7 @@
 </head>
 <body style="display: flex; flex-direction: column;">
     <div class="gameBox">
+        <div id="score" class="scoreBox" style="text-align: center;">BEGIN!</div>
         <div class="box">
             <div id ="btn1" class ="boxSquare">
     
