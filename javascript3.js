@@ -1,3 +1,5 @@
+/*
+
 const personFactory = (name, age) => {
     const sayHello = () => console.log('hello!');
     const getName = () => name;
@@ -10,12 +12,15 @@ const personFactory = (name, age) => {
 
 
 
-
+*/
 
 
   
   const Player = (name, level) => {
     let health = level * 2;
+    let number3 = 3;
+
+    const get3 = () => number3;
     const getLevel = () => level;
     const getName  = () => name;
     const die = () => {
@@ -43,4 +48,5 @@ const personFactory = (name, age) => {
   const jimmie = Player('jim', 10);
   const badGuy = Player('jeff', 5);
   jimmie.attack(badGuy);
+  
   
