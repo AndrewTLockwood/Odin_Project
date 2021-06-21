@@ -51,18 +51,20 @@ const player = (playerArray) => {
 };
 
 
-function endGame (count, winPlayer) {
+function endGame ( count, winPlayer) {
     if (count == 9){
         document.getElementById("score").innerHTML = "Tie Game!";  
     }
 
     if (winPlayer == 1){
         document.getElementById("score").innerHTML = "Player One Wins"; 
+        console.log(button);
     }
 
     else if (winPlayer == 2){
         document.getElementById("score").innerHTML = "Player Two Wins";
     }
+
 
 }
 
@@ -85,7 +87,9 @@ function playGame () {
             else {
             //    console.log(i);
                 if (newGame.getFirstPlayer() == true){
-                    document.getElementById("btn" + i).innerHTML += '<div class="IconX">x</div>'; 
+                    button.className = "IconX";
+                    button.innerHTML = "x";
+             //       document.getElementById("btn" + i).
                     playerOne.setNums(i);
                     for (let i = 0; i< 8; i++){
                         let checker = newGame.getWinning()[i].every(v => playerOne.getNums().includes(v));
@@ -98,9 +102,10 @@ function playGame () {
                     newGame.setCount(newGame.getCount() + 1);
               //      console.log(newGame.getCount());
                     console.log("turn", newGame.getCount());
-                    endGame(newGame.getCount(), newGame.getWinPlayer());
+                    endGame(button, newGame.getCount(), newGame.getWinPlayer());
                     newGame.setFirstPlayer(false);
                     console.log(newGame.getFirstPlayer());
+
                 }
                 else {
                     document.getElementById("btn" + i).innerHTML += '<div class="IconO">o</div>'; 
