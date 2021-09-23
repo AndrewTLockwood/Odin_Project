@@ -1,6 +1,6 @@
-export default function menu() {
+export default function about() {
     const element = document.createElement('div');
-        element.classList.add("menu");
+        element.classList.add("about");
       //  element.innerHTML = "element";
   
     const menu1 = document.createElement('div');
@@ -12,6 +12,3 @@ export default function menu() {
 
     return element;
   }
-
-
-

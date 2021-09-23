@@ -16,3 +16,28 @@
 .dog {
     margin-top: 50px;
 }
+
+.menu {
+    background-color: aqua;
+    width: 80vw;
+    height: 200px;
+}
+
+.menuItem {
+    background-color:beige;
+    width: 60vw;
+    height: 200px;
+}
+
+.about {
+    background-color: rgb(33, 155, 22);
+    width: 80vw;
+    height: 200px;
+}
+
+.base {
+    background-color:rgb(124, 141, 124);
+    width: 100vw;
+    width: 100vh;
+
+}

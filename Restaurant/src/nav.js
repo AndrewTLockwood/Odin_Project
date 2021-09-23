@@ -14,6 +14,7 @@ export default function nav() {
     const btn2 = document.createElement('div');
     btn2.innerHTML = "about";
     btn2.classList.add('navItem');
+    btn2.id="btn2";
     element.appendChild(btn2);
 
     const btn3 = document.createElement('div');
